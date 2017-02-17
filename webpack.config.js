@@ -1,10 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
 
-module.exports = {
+const config = {
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, 'dist'),
+    publicPath: '/public/',
     filename: 'bundle.js'
   },
   module: {
@@ -17,3 +18,10 @@ module.exports = {
     ]
   }
 };
+
+switch (process.env.NODE_ENV) {
+  case 'development':
+    config.devtool = 'inline-source-map';
+}
+
+module.exports = config;
