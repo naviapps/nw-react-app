@@ -3,18 +3,26 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as CounterActions from '../actions';
 
+import { BrowserRouter, Route } from 'react-router-dom';
+const Home = () => (<div>Home!asa</div>);
+const About = () => (<div>Home!aaaaaaaa</div>);
+
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src="" className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <BrowserRouter>
+        <div className="App">
+          <div className="App-header">
+            <h2>Welcome to Reaaaaac2</h2>
+          </div>
+          <p className="App-intro">
+            To get started, ediad2 <code>src/Adpp.js</code> and save to reload.
+          </p>
+          {this.props.children}
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      </BrowserRouter>
     );
   }
 }
