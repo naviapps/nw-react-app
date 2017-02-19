@@ -11,7 +11,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.join(__dirname, 'dist'),
-    publicPath: '/'
+    publicPath: '/static/'
   },
   devtool: 'inline-source-map',
   module: {
@@ -39,6 +39,7 @@ module.exports = {
     new webpack.NoEmitOnErrorsPlugin(),
   ],
   devServer: {
+    contentBase: path.join(__dirname, 'public'),
     host: 'localhost',
     port: 3000,
     historyApiFallback: true,

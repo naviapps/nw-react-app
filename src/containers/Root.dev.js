@@ -4,6 +4,10 @@ import App from './App';
 import DevTools from './DevTools';
 
 export default class Root extends Component {
+  static propTypes = {
+    store: PropTypes.object.isRequired,
+  };
+
   render() {
     const { store } = this.props;
     return (
@@ -16,7 +20,3 @@ export default class Root extends Component {
     );
   }
 }
-
-Root.propTypes = {
-  store: PropTypes.object.isRequired,
-};
