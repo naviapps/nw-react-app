@@ -1,6 +1,6 @@
 {
   "name": "nw-react-boilerplate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "NW.js + React.js Boilerplate",
   "keywords": [
     "nw",
@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "lint": "eslint src"
+    "lint": "eslint src; exit 0"
   },
   "dependencies": {
     "react": "^15.4.2",
@@ -48,6 +48,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.0",
+    "flow-bin": "^0.39.0",
     "nw": "^0.20.2",
     "nw-builder": "^3.2.0",
     "style-loader": "^0.13.1",
