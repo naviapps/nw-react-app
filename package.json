@@ -1,12 +1,26 @@
 {
   "name": "nw-react-boilerplate",
   "version": "0.0.1",
-  "private": true,
+  "description": "NW.js + React.js Boilerplate",
+  "keywords": [
+    "nw",
+    "react",
+    "boilerplate",
+    "redux",
+    "react-router",
+    "webpack"
+  ],
+  "bugs": {
+    "url": "https://github.com/naviapps/nw-react-boilerplate/issues"
+  },
   "license": "MIT",
   "main": "http://localhost:3000",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/naviapps/nw-react-boilerplate.git"
+  },
   "scripts": {
-    "start": "nw .",
-    "webpack": "webpack-dev-server",
+    "start": "node server.js",
     "lint": "eslint src"
   },
   "dependencies": {
@@ -29,7 +43,7 @@
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-2": "^6.22.0",
     "css-loader": "^0.26.1",
-    "eslint": "^3.15.0",
+    "eslint": "^3.16.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
@@ -40,6 +54,6 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^2.5.0",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.3.0"
+    "webpack-dev-server": "^2.4.1"
   }
 }
