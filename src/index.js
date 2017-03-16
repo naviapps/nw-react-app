@@ -5,7 +5,6 @@ import configureStore from './store/configureStore';
 import Root from './containers/Root';
 
 const store = configureStore();
-
 const rootEl = document.getElementById('root');
 
 const render = Component => ReactDOM.render( // eslint-disable-line react/no-render-return-value
