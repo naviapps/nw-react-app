@@ -39,7 +39,6 @@ module.exports = {
     new webpack.NoEmitOnErrorsPlugin(),
   ],
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
     host: 'localhost',
     port: 3000,
     historyApiFallback: true,

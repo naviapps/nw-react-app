@@ -5,6 +5,7 @@
 * Redux DevTools
 * Webpack
 * ESLint
+* [Yarn](https://yarnpkg.com)
 
 ## Installation
 
