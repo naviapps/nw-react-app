@@ -5,24 +5,22 @@
   "keywords": [
     "nw",
     "react",
-    "boilerplate",
-    "redux",
-    "react-router",
-    "webpack"
+    "boilerplate"
   ],
   "bugs": {
     "url": "https://github.com/naviapps/nw-react-boilerplate/issues"
   },
   "license": "MIT",
-  "main": "http://localhost:3000",
+  "main": "index.html",
   "repository": {
     "type": "git",
     "url": "https://github.com/naviapps/nw-react-boilerplate.git"
   },
   "scripts": {
-    "start": "node server.js",
-    "prebuild": "rimraf dist",
-    "build": "webpack; nwbuild -v 0.21.6 -r .",
+    "start": "NODE_ENV=development node server.js",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "build": "NODE_ENV=production webpack --config webpack.prod.config.js -p; build --tasks mac-x64 .",
     "lint": "eslint src; exit 0"
   },
   "dependencies": {
@@ -44,6 +42,7 @@
     "babel-preset-env": "^1.4.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "copy-webpack-plugin": "^4.0.1",
     "copyfiles": "^1.2.0",
     "css-loader": "^0.28.1",
     "eslint": "^3.19.0",
@@ -54,11 +53,20 @@
     "flow-bin": "^0.45.0",
     "nw": "^0.21.6",
     "nw-builder": "^3.2.0",
+    "nwjs-builder-phoenix": "^1.14.0",
     "rimraf": "^2.6.1",
     "style-loader": "^0.17.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "webpack": "^2.5.1",
     "webpack-dev-server": "^2.4.5"
+  },
+  "build": {
+    "nwVersion": "0.21.6",
+    "nwFlavor": "sdk",
+    "files": [
+      "./index.html",
+      "./dist/bundle.js"
+    ]
   }
 }

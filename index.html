@@ -5,9 +5,11 @@
   </head>
   <body>
     <div id="root"></div>
+    Hello
     <script>
-      document.write('<script src="http://localhost:3000/static/bundle.js"><\/script>');
-      console.log(process);
+      document.write('<script src="' + (process.env.NODE_ENV === 'development'
+        ? 'http://localhost:3000/dist/bundle.js'
+        : 'dist/bundle.js') + '"><\/script>');
     </script>
   </body>
 </html>

@@ -9,8 +9,7 @@ const port = devServerConfig.port;
 const host = devServerConfig.host;
 
 new WebpackDevServer(webpack(webpackConfig), Object.assign(devServerConfig, {
-  publicPath: webpackConfig.output.publicPath,
-  stats: { colors: true }
+  stats: { colors: true },
 })).listen(port, host, err => {
   if (err) {
     return console.log(err);
