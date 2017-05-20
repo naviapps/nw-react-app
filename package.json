@@ -4,6 +4,9 @@
   "description": "NW.js + React.js Boilerplate",
   "keywords": [
     "nw",
+    "nw.js",
+    "nwjs",
+    "node-webkit",
     "react",
     "boilerplate"
   ],
@@ -18,9 +21,8 @@
   },
   "scripts": {
     "start": "NODE_ENV=development node server.js",
-    "clean": "rimraf dist",
-    "prebuild": "npm run clean",
-    "build": "NODE_ENV=production webpack --config webpack.prod.config.js -p; build --tasks mac-x64 .",
+    "prebuild": "rimraf dist",
+    "build": "cross-env NODE_ENV=production webpack -p --config webpack.config.prod.js; build --tasks win-x64,mac-x64 .",
     "lint": "eslint src; exit 0"
   },
   "dependencies": {
@@ -44,6 +46,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "copy-webpack-plugin": "^4.0.1",
     "copyfiles": "^1.2.0",
+    "cross-env": "^5.0.0",
     "css-loader": "^0.28.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",

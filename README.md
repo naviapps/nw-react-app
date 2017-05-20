@@ -9,12 +9,18 @@
 
 ## Installation
 
-```sh
-$ git clone https://github.com/naviapps/nw-react-boilerplate my-app
+```bash
+git clone https://github.com/naviapps/nw-react-boilerplate my-app
 ```
 
 ## Start
 
-```sh
-$ npm start
+```bash
+npm start
+```
+
+## Build
+
+```bash
+npm run build
 ```
