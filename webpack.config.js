@@ -1,4 +1,5 @@
 const path = require('path');
+const spawn = require('child_process').spawn;
 const webpack = require('webpack');
 
 const port = process.env.PORT || 3000;
@@ -14,16 +15,20 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
+    publicPath: `http://localhost:${port}/`,
   },
   devtool: 'inline-source-map',
   devServer: {
     hot: true,
-    contentBase: path.resolve(__dirname, 'dist'),
     host: 'localhost',
     port,
     publicPath: '/',
     historyApiFallback: true,
+    setup() {
+      spawn('run', ['.'], { stdio: 'inherit' })
+        .on('close', code => process.exit(code))
+        .on('error', err => console.error(err));
+    },
   },
   module: {
     rules: [

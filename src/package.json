@@ -1,9 +1,0 @@
-{
-  "name": "nw-react-boilerplate",
-  "version": "0.0.3",
-  "description": "NW.js + React.js Boilerplate",
-  "main": "index.html",
-  "build": {
-    "nwVersion": "0.21.6"
-  }
-}

@@ -1,9 +1,17 @@
 import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import { routerMiddleware } from 'react-router-redux';
+import createSagaMiddleware from 'redux-saga';
 import rootReducer from '../reducers';
 
-const enhancer = applyMiddleware(thunk);
+const sagaMiddleware = createSagaMiddleware();
 
-export default function configureStore(initialState) {
+export default function configureStore(history, initialState) {
+  const middlewares = [
+    sagaMiddleware,
+    routerMiddleware(history),
+  ];
+
+  const enhancer = applyMiddleware(...middlewares);
+
   return createStore(rootReducer, initialState, enhancer);
 }
