@@ -15,7 +15,7 @@ new WebpackDevServer(webpack(webpackConfig), Object.assign(devServerConfig, {
     return console.log(err);
   }
 
-  spawn('nw', [], { stdio: 'inherit' })
+  spawn('run', ['.'], { stdio: 'inherit' })
     .on('close', code => process.exit(code))
     .on('error', err => console.error(err));
 

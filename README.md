@@ -24,3 +24,8 @@ npm start
 ```bash
 npm run build
 ```
+
+## TODO
+
+* Flow
+* Redux
