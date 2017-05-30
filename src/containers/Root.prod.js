@@ -1,11 +1,13 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { Router } from 'react-router';
-import routes from '../routes';
+import { ConnectedRouter } from 'react-router-redux';
+import Routes from '../routes';
 
-const Root = ({ store, history }) => (
+const Root = ({ store, history }) => ( // eslint-disable-line react/prop-types
   <Provider store={store}>
-    <Router history={history} routes={routes} />
+    <ConnectedRouter history={history}>
+      <Routes />
+    </ConnectedRouter>
   </Provider>
 );
 

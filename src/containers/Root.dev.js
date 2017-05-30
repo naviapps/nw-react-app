@@ -1,15 +1,17 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { Router } from 'react-router';
-import routes from '../routes';
+import { ConnectedRouter } from 'react-router-redux';
+import Routes from '../routes';
 import DevTools from './DevTools';
 
-const Root = ({ store, history }) => (
+const Root = ({ store, history }) => ( // eslint-disable-line react/prop-types
   <Provider store={store}>
-    <div>
-      <Router history={history} routes={routes} />
-      <DevTools />
-    </div>
+    <ConnectedRouter history={history}>
+      <div>
+        <Routes />
+        <DevTools />
+      </div>
+    </ConnectedRouter>
   </Provider>
 );
 
