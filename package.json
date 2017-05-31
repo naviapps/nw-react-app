@@ -22,7 +22,7 @@
   "scripts": {
     "start": "webpack-dev-server --env=dev --progress --profile --colors",
     "prebuild": "rimraf dist",
-    "build": "webpack --env=dev --progress --profile --colors; build --tasks win-32,win-x64,mac-x64 .",
+    "build": "webpack --env=prod --progress --profile --colors; build --tasks win-32,win-x64,mac-x64 .",
     "lint": "eslint src; exit 0"
   },
   "dependencies": {
@@ -49,7 +49,6 @@
     "babel-preset-env": "^1.5.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
-    "cross-env": "^5.0.0",
     "css-loader": "^0.28.4",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
