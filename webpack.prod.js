@@ -1,8 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
+const Merge = require('webpack-merge');
+const CommonConfig = require('./webpack.common');
 
-module.exports = {
-  context: path.resolve(__dirname, 'src'),
+module.exports = Merge(CommonConfig, {
   entry: './index.js',
   output: {
     filename: 'bundle.js',
@@ -11,11 +12,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.jsx?$/,
-        use: ['babel-loader'],
-        exclude: /node_modules/,
-      },
       {
         test: /\.css/,
         use: [
@@ -28,9 +24,9 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('production')
+        'NODE_ENV': JSON.stringify('production')
       }
     }),
     new webpack.optimize.UglifyJsPlugin(),
   ],
-};
+});

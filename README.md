@@ -1,11 +1,12 @@
 # nw-react-boilerplate
 
-* React Redux Router
-* Hot Loading
-* Redux DevTools
-* Webpack
-* ESLint
-* [Yarn](https://yarnpkg.com)
+* [react-router-redux](https://github.com/reactjs/react-router-redux)
+* [React Hot Loader 3](https://github.com/gaearon/react-hot-loader)
+* [Redux DevTools](https://github.com/gaearon/redux-devtools)
+* [webpack](https://webpack.js.org/)
+* [ESLint](http://eslint.org/)
+* [Yarn](https://yarnpkg.com/)
+* [redux-saga](https://github.com/redux-saga/redux-saga)
 
 ## Installation
 
@@ -28,4 +29,3 @@ npm run build
 ## TODO
 
 * Flow
-* Redux
