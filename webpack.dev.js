@@ -41,6 +41,7 @@ module.exports = Merge(CommonConfig, {
       },
     ],
   },
+  target: "node-webkit",
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),

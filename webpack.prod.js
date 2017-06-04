@@ -21,6 +21,7 @@ module.exports = Merge(CommonConfig, {
       },
     ],
   },
+  target: "node-webkit",
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
