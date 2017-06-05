@@ -1,13 +1,12 @@
-const path = require('path');
-const webpack = require('webpack');
-const Merge = require('webpack-merge');
-const CommonConfig = require('./webpack.common');
+import path from 'path';
+import webpack from 'webpack';
+import Merge from 'webpack-merge';
+import CommonConfig from './webpack.common';
 
-module.exports = Merge(CommonConfig, {
+export default Merge(CommonConfig, {
+  context: path.resolve(__dirname, 'src'),
   entry: './index.js',
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
   },
   module: {

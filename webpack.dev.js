@@ -1,12 +1,13 @@
-const path = require('path');
-const spawn = require('child_process').spawn;
-const webpack = require('webpack');
-const Merge = require('webpack-merge');
-const CommonConfig = require('./webpack.common');
+import path from 'path';
+import { spawn } from 'child_process';
+import webpack from 'webpack';
+import Merge from 'webpack-merge';
+import CommonConfig from './webpack.common';
 
 const port = process.env.PORT || 3000;
 
-module.exports = Merge(CommonConfig, {
+export default Merge(CommonConfig, {
+  context: path.resolve(__dirname, 'src'),
   entry: [
     'react-hot-loader/patch',
     `webpack-dev-server/client?http://localhost:${port}`,
@@ -14,8 +15,6 @@ module.exports = Merge(CommonConfig, {
     './index.js',
   ],
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
     publicPath: `http://localhost:${port}/`,
   },
   devtool: 'inline-source-map',

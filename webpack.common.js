@@ -1,14 +1,25 @@
-const path = require('path');
+import path from 'path';
 
-module.exports = {
-  context: path.resolve(__dirname, 'src'),
+export default {
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
+  },
   module: {
     rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true
+          }
+        }
       }
     ]
+  },
+  resolve: {
+    extensions: ['.js', '.json', '.jsx']
   }
 };
