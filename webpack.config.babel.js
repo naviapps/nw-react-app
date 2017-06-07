@@ -1,1 +1,1 @@
-export default env => require(`./webpack.${env}`);
+export default env => require(`./webpack.${env}`).default;
