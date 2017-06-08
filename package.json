@@ -1,6 +1,6 @@
 {
   "name": "nw-react-boilerplate",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "NW.js + React.js Boilerplate",
   "keywords": [
     "nw",
@@ -22,7 +22,7 @@
   "scripts": {
     "start": "webpack-dev-server --env=dev --progress --profile --colors",
     "prebuild": "rimraf dist",
-    "build": "webpack --env=prod --progress --profile --colors; build --tasks win-32,win-x64,mac-x64 .",
+    "build": "webpack --env=prod --progress --profile --colors; build --tasks win-x86,win-x64,mac-x64 .",
     "lint": "eslint src; exit 0"
   },
   "dependencies": {
