@@ -22,6 +22,7 @@
   "scripts": {
     "start": "webpack-dev-server --env=dev --progress --profile --colors",
     "prebuild": "rimraf dist",
+    "nw": "run .",
     "build": "webpack --env=prod --progress --profile --colors; build --tasks win-x86,win-x64,mac-x64 .",
     "lint": "eslint src; exit 0"
   },
@@ -52,6 +53,7 @@
     "css-loader": "^0.28.4",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-flowtype": "^2.34.0",
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^7.0.1",

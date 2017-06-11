@@ -24,7 +24,7 @@ export default Merge(CommonConfig, {
     publicPath: '/',
     historyApiFallback: true,
     setup() {
-      spawn('run', ['.'], { stdio: 'inherit' })
+      spawn('npm', ['run', 'nw'], { shell: true, stdio: 'inherit' })
         .on('close', code => process.exit(code))
         .on('error', err => console.error(err));
     },
@@ -40,7 +40,7 @@ export default Merge(CommonConfig, {
       },
     ],
   },
-  target: "node-webkit",
+  target: 'node-webkit',
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
