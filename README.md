@@ -12,6 +12,8 @@
 
 ```bash
 git clone https://github.com/naviapps/nw-react-boilerplate my-app
+cd my-app
+npm install
 ```
 
 ## Start
@@ -25,7 +27,3 @@ npm start
 ```bash
 npm run build
 ```
-
-## TODO
-
-* Flow
