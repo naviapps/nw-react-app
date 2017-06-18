@@ -24,7 +24,8 @@
     "prebuild": "rimraf dist",
     "nw": "run .",
     "build": "webpack --env=prod --progress --profile --colors; build --tasks win-x86,win-x64,mac-x64 .",
-    "lint": "eslint src; exit 0"
+    "lint": "eslint src; exit 0",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "history": "^4.6.2",
@@ -52,7 +53,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.24.1",
     "css-loader": "^0.28.4",
-    "eslint": "^4.0.0",
+    "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
     "eslint-plugin-flowtype": "^2.34.0",
     "eslint-plugin-import": "^2.3.0",

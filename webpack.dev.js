@@ -1,12 +1,12 @@
-import path from 'path';
-import { spawn } from 'child_process';
-import webpack from 'webpack';
-import Merge from 'webpack-merge';
-import CommonConfig from './webpack.common';
+const path = require('path');
+const spawn = require('child_process').spawn;
+const webpack = require('webpack');
+const Merge = require('webpack-merge');
+const CommonConfig = require('./webpack.common');
 
 const port = process.env.PORT || 3000;
 
-export default Merge(CommonConfig, {
+module.exports = Merge(CommonConfig, {
   context: path.resolve(__dirname, 'src'),
   entry: [
     'react-hot-loader/patch',

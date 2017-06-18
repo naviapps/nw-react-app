@@ -1,9 +1,9 @@
-import path from 'path';
-import webpack from 'webpack';
-import Merge from 'webpack-merge';
-import CommonConfig from './webpack.common';
+const path = require('path');
+const webpack = require('webpack');
+const Merge = require('webpack-merge');
+const CommonConfig = require('./webpack.common');
 
-export default Merge(CommonConfig, {
+module.exports = Merge(CommonConfig, {
   context: path.resolve(__dirname, 'src'),
   entry: './index.js',
   output: {
