@@ -1,13 +1,12 @@
 const path = require('path');
 const spawn = require('child_process').spawn;
-const webpack = require('webpack');
-const Merge = require('webpack-merge');
+const webpack = require('webpack'); // eslint-disable-line import/no-extraneous-dependencies
+const Merge = require('webpack-merge'); // eslint-disable-line import/no-extraneous-dependencies
 const CommonConfig = require('./webpack.common');
 
 const port = process.env.PORT || 3000;
 
 module.exports = Merge(CommonConfig, {
-  context: path.resolve(__dirname, 'src'),
   entry: [
     'react-hot-loader/patch',
     `webpack-dev-server/client?http://localhost:${port}`,
@@ -26,7 +25,7 @@ module.exports = Merge(CommonConfig, {
     setup() {
       spawn('npm', ['run', 'nw'], { shell: true, stdio: 'inherit' })
         .on('close', code => process.exit(code))
-        .on('error', err => console.error(err));
+        .on('error', err => console.error(err)); // eslint-disable-line no-console
     },
   },
   module: {
@@ -35,8 +34,17 @@ module.exports = Merge(CommonConfig, {
         test: /\.css/,
         use: [
           'style-loader',
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
         ],
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?v=\d\.\d\.\d)?$/,
+        loader: 'file-loader',
       },
     ],
   },

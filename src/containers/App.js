@@ -26,6 +26,7 @@ App.propTypes = {
   counter: PropTypes.number,
   increment: PropTypes.func,
   decrement: PropTypes.func,
+  children: PropTypes.node.isRequired,
 };
 
 const mapStateToProps = state => ({
