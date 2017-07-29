@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   output: {
@@ -20,6 +21,13 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.json', '.jsx']
-  }
+    extensions: ['.js', '.json', '.jsx'],
+    modules: [
+      path.resolve(__dirname, 'src'),
+      'node_modules',
+    ],
+  },
+  plugins: [
+    new webpack.NamedModulesPlugin(),
+  ],
 };
