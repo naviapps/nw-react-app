@@ -43,7 +43,20 @@ module.exports = Merge(CommonConfig, {
         ],
       },
       {
-        test: /\.(ttf|eot|svg)(\?v=\d\.\d\.\d)?$/,
+        test: /\.scss/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+          'sass-loader',
+        ],
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader',
       },
     ],

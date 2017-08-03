@@ -1,5 +1,6 @@
 const webpack = require('webpack'); // eslint-disable-line import/no-extraneous-dependencies
 const Merge = require('webpack-merge'); // eslint-disable-line import/no-extraneous-dependencies
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CommonConfig = require('./webpack.common');
 
 module.exports = Merge(CommonConfig, {
@@ -17,7 +18,17 @@ module.exports = Merge(CommonConfig, {
         ],
       },
       {
-        test: /\.(ttf|eot|svg)(\?v=\d\.\d\.\d)?$/,
+        test: /\.scss/,
+        use: ExtractTextPlugin.extract({
+          use: [
+            'css-loader',
+            'sass-loader',
+          ],
+          fallback: 'style-loader',
+        }),
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader',
       },
     ],
@@ -28,5 +39,6 @@ module.exports = Merge(CommonConfig, {
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
     new webpack.optimize.UglifyJsPlugin(),
+    new ExtractTextPlugin('styles.css'),
   ],
 });

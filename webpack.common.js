@@ -20,7 +20,7 @@ module.exports = {
         },
       },
       {
-        test: /\.woff(2)?(\?v=\d\.\d\.\d)?$/,
+        test: /\.woff(2)?(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url-loader',
         options: {
           limit: 10000,
