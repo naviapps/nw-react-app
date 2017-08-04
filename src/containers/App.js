@@ -23,9 +23,9 @@ const App = ({ counter, increment, decrement, children }) => (
 );
 
 App.propTypes = {
-  counter: PropTypes.number,
-  increment: PropTypes.func,
-  decrement: PropTypes.func,
+  counter: PropTypes.number.isRequired,
+  increment: PropTypes.func.isRequired,
+  decrement: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
 };
 

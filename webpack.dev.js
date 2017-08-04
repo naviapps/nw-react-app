@@ -1,27 +1,12 @@
-const path = require('path');
-const spawn = require('child_process').spawn;
-const webpack = require('webpack'); // eslint-disable-line import/no-extraneous-dependencies
-const Merge = require('webpack-merge'); // eslint-disable-line import/no-extraneous-dependencies
-const CommonConfig = require('./webpack.common');
+process.env.NODE_ENV = 'development';
 
-const port = process.env.PORT || 3000;
+const spawn = require('child_process').spawn;
+const Merge = require('webpack-merge'); // eslint-disable-line import/no-extraneous-dependencies
+const CommonConfig = require('./lib/nw-react-scripts/config/webpack.config.dev');
 
 module.exports = Merge(CommonConfig, {
-  entry: [
-    'react-hot-loader/patch',
-    `webpack-dev-server/client?http://localhost:${port}`,
-    'webpack/hot/only-dev-server',
-    './index.js',
-  ],
-  output: {
-    publicPath: `http://localhost:${port}/`,
-  },
   devtool: 'inline-source-map',
   devServer: {
-    hot: true,
-    port,
-    publicPath: '/',
-    historyApiFallback: true,
     setup() {
       spawn('npm', ['run', 'nw'], { shell: true, stdio: 'inherit' })
         .on('close', code => process.exit(code))
@@ -30,18 +15,6 @@ module.exports = Merge(CommonConfig, {
   },
   module: {
     rules: [
-      {
-        test: /\.css/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-        ],
-      },
       {
         test: /\.scss/,
         use: [
@@ -59,14 +32,15 @@ module.exports = Merge(CommonConfig, {
         test: /\.(ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader',
       },
+      {
+        test: /\.woff(2)?(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          mimeType: 'application/font-woff',
+        },
+      },
     ],
   },
-  target: 'node-webkit',
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development'),
-    }),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
-  ],
+  //target: 'node-webkit',
 });
