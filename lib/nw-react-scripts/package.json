@@ -12,8 +12,7 @@
   },
   "files": [
     "bin",
-    "config",
-    "scripts"
+    "config"
   ],
   "bin": "./bin/nw-react-scripts.js",
   "repository": "naviapps/nw-react-scripts",

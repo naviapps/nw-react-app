@@ -1,14 +1,10 @@
 process.env.NODE_ENV = 'production';
 
-const path = require('path');
-const webpack = require('webpack'); // eslint-disable-line import/no-extraneous-dependencies
 const Merge = require('webpack-merge'); // eslint-disable-line import/no-extraneous-dependencies
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const CommonConfig = require('./lib/nw-react-scripts/config/webpack.config.prod');
-const paths = require('./lib/nw-react-scripts/config/paths');
+const ProdConfig = require('nw-react-scripts/config/webpack.config.prod');
 
-module.exports = Merge(CommonConfig, {
-  entry: paths.appIndexJs,
+module.exports = Merge(ProdConfig, {
   output: {
     filename: 'bundle.js',
     publicPath: '/',

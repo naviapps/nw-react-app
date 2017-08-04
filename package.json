@@ -17,7 +17,7 @@
   "main": "index.html",
   "repository": "naviapps/nw-react-boilerplate",
   "scripts": {
-    "start": "webpack-dev-server --env=dev --progress --profile --colors",
+    "start": "nw-react-scripts start --webpack=config/webpack.config.dev.js",
     "prebuild": "rimraf dist",
     "nw": "run .",
     "build": "webpack --env=prod --progress --profile --colors; build --tasks win-x86,win-x64,mac-x64 .",
