@@ -5,10 +5,6 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const ProdConfig = require('nw-react-scripts/config/webpack.config.prod');
 
 module.exports = Merge(ProdConfig, {
-  output: {
-    filename: 'bundle.js',
-    publicPath: '/',
-  },
   module: {
     rules: [
       {
@@ -35,8 +31,4 @@ module.exports = Merge(ProdConfig, {
       },
     ],
   },
-  target: 'node-webkit',
-  plugins: [
-    new ExtractTextPlugin('styles.css'),
-  ],
 });

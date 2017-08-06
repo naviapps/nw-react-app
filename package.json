@@ -18,14 +18,14 @@
   "repository": "naviapps/nw-react-boilerplate",
   "scripts": {
     "start": "nw-react-scripts start --webpack=config/webpack.config.dev.js",
-    "prebuild": "rimraf dist",
-    "nw": "run .",
-    "build": "webpack --env=prod --progress --profile --colors; build --tasks win-x86,win-x64,mac-x64 .",
-    "lint": "eslint --cache .; exit 0",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "nw-react-scripts build --webpack=config/webpack.config.prod.js",
+    "old-prebuild": "rimraf dist",
+    "old-build": "webpack --env=prod --progress --profile --colors; build --tasks win-x86,win-x64,mac-x64 .",
+    "test": "nw-react-scripts test"
   },
   "dependencies": {
     "history": "^4.6.3",
+    "nw-react-scripts": "file:lib/nw-react-scripts",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -62,7 +62,6 @@
     "flow-bin": "^0.51.1",
     "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.5.3",
-    "nw-react-scripts": "file:lib/nw-react-scripts",
     "postcss-loader": "^2.0.6",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.6",

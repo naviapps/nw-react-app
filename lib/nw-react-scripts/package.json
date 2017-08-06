@@ -1,7 +1,7 @@
 {
   "name": "nw-react-scripts",
   "version": "0.0.1",
-  "description": "NW.js",
+  "description": "Configuration and scripts for Create NW.js React App.",
   "keywords": [
     "nw",
     "nw.js",
@@ -35,6 +35,8 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
     "file-loader": "^0.11.2",
+    "fs-extra": "^4.0.1",
+    "html-webpack-plugin": "^2.30.1",
     "jest": "^20.0.4",
     "nwjs-builder-phoenix": "^1.14.3",
     "object-assign": "^4.1.1",
@@ -44,10 +46,14 @@
     "react-dev-utils": "^3.0.2",
     "react-error-overlay": "^1.0.9",
     "style-loader": "^0.18.2",
+    "sw-precache-webpack-plugin": "^0.11.4",
     "url-loader": "^0.5.9",
     "webpack": "^3.4.1",
     "webpack-dev-server": "^2.6.1",
     "webpack-manifest-plugin": "^1.2.1",
     "whatwg-fetch": "^2.0.3"
+  },
+  "engines": {
+    "node": ">=6"
   }
 }
