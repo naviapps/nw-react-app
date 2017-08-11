@@ -1,9 +1,11 @@
 [ignore]
 .*/node_modules/.*
-.*/dist/.*
+.*/build/.*
 
 [include]
 
 [libs]
 
 [options]
+
+[lints]

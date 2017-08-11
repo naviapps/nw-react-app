@@ -17,21 +17,18 @@
   "main": "index.html",
   "repository": "naviapps/nw-react-boilerplate",
   "scripts": {
-    "start": "nw-react-scripts start --webpack=config/webpack.config.dev.js",
-    "build": "nw-react-scripts build --webpack=config/webpack.config.prod.js",
-    "old-prebuild": "rimraf dist",
-    "old-build": "webpack --env=prod --progress --profile --colors; build --tasks win-x86,win-x64,mac-x64 .",
-    "test": "nw-react-scripts test"
+    "start": "nw-react-scripts --webpack=./config/webpack.config.dev.js start",
+    "build": "nw-react-scripts --webpack=./config/webpack.config.prod.js build",
+    "test": "nw-react-scripts test",
+    "flow": "flow"
   },
   "dependencies": {
     "history": "^4.6.3",
-    "nw-react-scripts": "file:lib/nw-react-scripts",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-helmet": "^5.1.3",
-    "react-hot-loader": "^3.0.0-beta.7",
-    "react-redux": "^5.0.5",
+    "react-redux": "^5.0.6",
     "react-router": "^4.1.2",
     "react-router-dom": "^4.1.2",
     "react-router-redux": "5.0.0-alpha.6",
@@ -42,43 +39,19 @@
     "redux-saga": "^0.15.6"
   },
   "devDependencies": {
-    "babel-core": "^6.25.0",
-    "babel-eslint": "^7.2.3",
-    "babel-loader": "^7.1.1",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "babel-register": "^6.24.1",
     "css-loader": "^0.28.4",
-    "dotenv": "^4.0.0",
-    "eslint": "^4.3.0",
-    "eslint-config-airbnb": "^15.1.0",
-    "eslint-plugin-flowtype": "^2.35.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.1.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
-    "flow-bin": "^0.51.1",
-    "html-webpack-plugin": "^2.30.1",
+    "flow-bin": "^0.52.0",
     "node-sass": "^4.5.3",
-    "postcss-loader": "^2.0.6",
-    "rimraf": "^2.6.1",
+    "nw-react-scripts": "^0.1.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
-    "webpack": "^3.4.1",
     "webpack-merge": "^4.1.0"
   },
   "window": {
     "width": 800,
     "height": 500
-  },
-  "build": {
-    "nwVersion": "0.24.0",
-    "files": [
-      "./index.html",
-      "./dist/bundle.js"
-    ]
   }
 }
