@@ -1,6 +1,7 @@
+'use strict';
+
 const config = require('nw-react-scripts/config/webpack.config.dev');
 
-config.devtool = 'inline-source-map'; // Fix
 config.module.rules[1].oneOf.unshift(
   {
     test: /\.scss/,
