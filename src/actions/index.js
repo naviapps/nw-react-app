@@ -1,4 +1,4 @@
-import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../constants/ActionTypes';
+import { INCREMENT_COUNTER, DECREMENT_COUNTER, INCREMENT_ASYNC_COUNTER } from '../constants/ActionTypes';
 
 export function increment() {
   return {
@@ -9,5 +9,11 @@ export function increment() {
 export function decrement() {
   return {
     type: DECREMENT_COUNTER,
+  };
+}
+
+export function incrementAsync() {
+  return {
+    type: INCREMENT_ASYNC_COUNTER,
   };
 }

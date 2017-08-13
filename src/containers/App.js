@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import * as CounterActions from '../actions';
 import Counter from '../components/Counter';
 
-const App = ({ counter, increment, decrement, children }) => (
+const App = ({ counter, increment, decrement, incrementAsync, children }) => (
   <div>
     <ul>
       <li><Link to="/">Home</Link></li>
@@ -16,6 +16,7 @@ const App = ({ counter, increment, decrement, children }) => (
       value={counter}
       onIncrement={increment}
       onDecrement={decrement}
+      onIncrementAsync={incrementAsync}
     />
     <hr />
     {children}
@@ -26,6 +27,7 @@ App.propTypes = {
   counter: PropTypes.number.isRequired,
   increment: PropTypes.func.isRequired,
   decrement: PropTypes.func.isRequired,
+  incrementAsync: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
 };
 
