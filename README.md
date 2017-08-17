@@ -1,7 +1,8 @@
 # nw-react-boilerplate
 
+This project was bootstrapped with [Create NW.js React App](https://github.com/naviapps/create-nw-react-app)
+
 * [react-router-redux](https://github.com/reactjs/react-router-redux)
-* [React Hot Loader 3](https://github.com/gaearon/react-hot-loader)
 * [Redux DevTools](https://github.com/gaearon/redux-devtools)
 * [webpack](https://webpack.js.org/)
 * [ESLint](http://eslint.org/)
