@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import './Home.scss';
+import './Home.css';
 
 const Home = () => (
   <div>

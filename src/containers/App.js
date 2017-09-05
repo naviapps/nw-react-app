@@ -7,7 +7,7 @@ import * as CounterActions from '../actions';
 import Counter from '../components/Counter';
 
 const App = ({ counter, increment, decrement, incrementAsync, children }) => (
-  <div>
+  <div className="App">
     <ul>
       <li><Link to="/">Home</Link></li>
       <li><Link to="/about">About</Link></li>
