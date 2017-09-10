@@ -2,6 +2,7 @@
 
 This project was bootstrapped with [Create NW.js React App](https://github.com/naviapps/create-nw-react-app)
 
+* Hot Loading
 * [react-router-redux](https://github.com/reactjs/react-router-redux)
 * [Redux DevTools](https://github.com/gaearon/redux-devtools)
 * [webpack](https://webpack.js.org/)
@@ -27,4 +28,25 @@ npm start
 
 ```bash
 npm run build
+```
+
+### Build settings
+
+package.json
+
+```json
+{
+  //...
+  // See https://github.com/nwjs-community/nw-builder
+  "nwBuilder": {
+    "platforms": [
+      "osx64",
+      "win32",
+      "win64"
+    ],
+    "version": "latest", // 0.24.4, 0.25.0 etc.
+    "buildDir": "./build",
+    "cacheDir": "./cache"
+  }
+}
 ```

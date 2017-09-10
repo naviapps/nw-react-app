@@ -264,4 +264,7 @@ module.exports = {
   performance: {
     hints: false,
   },
+  // Intructs webpack to target a specific environment.
+  // https://webpack.js.org/configuration/target/
+  target: 'node-webkit',
 };
