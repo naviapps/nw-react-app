@@ -34,7 +34,7 @@ npm run build
 
 package.json
 
-```json
+```js
 {
   //...
   // See https://github.com/nwjs-community/nw-builder
