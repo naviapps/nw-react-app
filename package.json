@@ -1,46 +1,21 @@
 {
-  "name": "nw-react-boilerplate",
-  "version": "0.1.4",
-  "description": "NW.js + React.js Boilerplate",
-  "keywords": [
-    "nw",
-    "nw.js",
-    "nwjs",
-    "node-webkit",
-    "react",
-    "boilerplate"
-  ],
-  "bugs": {
-    "url": "https://github.com/naviapps/nw-react-boilerplate/issues"
-  },
-  "license": "MIT",
-  "repository": "naviapps/nw-react-boilerplate",
+  "name": "nw-react-app",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "flow-bin": "^0.55.0",
-    "history": "^4.7.2",
-    "nw-react-scripts": "^1.0.4",
-    "prop-types": "^15.5.10",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-helmet": "^5.2.0",
-    "react-redux": "^5.0.6",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
-    "react-router-redux": "5.0.0-alpha.6",
-    "redux": "^3.7.2",
-    "redux-devtools": "^3.4.0",
-    "redux-devtools-dock-monitor": "^1.1.2",
-    "redux-devtools-log-monitor": "^1.3.0",
-    "redux-saga": "^0.15.6"
+    "nw-react-scripts": "1.0.10",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
   },
-  "main": "index.html",
   "scripts": {
     "start": "nw-react-scripts start",
     "build": "nw-react-scripts build",
     "test": "nw-react-scripts test --env=jsdom",
     "eject": "nw-react-scripts eject"
   },
+  "main": "index.html",
   "nwBuilder": {
+    "//": "https://github.com/nwjs-community/nw-builder",
     "platforms": [
       "osx64",
       "win32",
@@ -48,10 +23,7 @@
     ],
     "version": "latest",
     "buildDir": "./build",
-    "cacheDir": "./cache"
-  },
-  "window": {
-    "width": 800,
-    "height": 500
+    "cacheDir": "./cache",
+    "macIcns": "./src/logo.icns"
   }
 }
